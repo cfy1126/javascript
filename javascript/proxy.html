@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 建立代理物件
+      let data = {
+        price: 100,
+        count: 5,
+      };
+      let proxy = new Proxy(data, {
+        get: function (target, property) {
+          // 使用代理物件取得属性资料的时候，会对应的函数
+          console.log('代理的目标物件', target);
+          console.log('想要取得的属性名称', property);
+          if (property == 'total') {
+            return target['price'] * target['count'];
+          }
+          return target[property];
+        },
+      });
+      // 使用代理物件，取得物件的属性资料
+      console.log(proxy.total);
+      console.log(data);
+    </script>
+  </body>
+</html>

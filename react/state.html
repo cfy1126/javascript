@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/react/18.2.0/umd/react.development.min.js"></script>
+  <script src="https://cdn.staticfile.org/react-dom/18.2.0/umd/react-dom.development.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    class MyHead extends React.Component {
+      render () {
+        console.log(this.props.level)
+        return React.createElement(`h${this.props.level}`, null, "Hello Component")
+      }
+    }
+    class MyHeadList extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = { maxLevel: 3 }
+        window.setTimeout(() => {
+          this.setState((currentState, currentProps) => ({
+            maxLevel: currentState.maxLevel + 1
+          }))
+        }, 2000)
+      }
+      render () {
+        let heads = []
+        let head
+        for (let i = 1; i < this.state.maxLevel; i++) {
+          head = React.createElement(MyHead, { level: i })
+          heads.push(head)
+        }
+        return React.createElement("DIV", null, heads)
+      }
+    }
+    window.addEventListener("load", () => {
+      // 1. 建立自订的 React 组件实体，给定属性
+      let myComponent = React.createElement(MyHeadList, null)
+      // 2. 将建立好的 React 组件实体渲染到容器中
+      const root = ReactDOM.createRoot(document.getElementById("root"))
+      root.render(myComponent)
+    })
+
+  </script>
+</body>
+
+</html>

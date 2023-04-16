@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/react/18.2.0/umd/react.development.min.js"></script>
+  <script src="https://cdn.staticfile.org/react-dom/18.2.0/umd/react-dom.development.min.js"></script>
+  <script src="https://cdn.staticfile.org/babel-standalone/7.21.4/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class MyHead extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          name: "",
+          gender: "male",
+          story: ""
+        }
+      }
+      handleSubmit (e) {
+        e.preventDefault()
+        console.log("表单送出")
+        console.log("name:", this.state.name)
+        console.log("gender:", this.state.gender)
+        console.log("story:", this.state.story)
+
+      }
+      handleNameOnchage (e) {
+        this.setState({
+          name: e.currentTarget.value
+        })
+      }
+      handleGenderOnchage (e) {
+        this.setState({
+          gender: e.currentTarget.value
+        })
+      }
+      handleStoryOnchage (e) {
+        this.setState({
+          story: e.currentTarget.value
+        })
+      }
+      render () {
+        return <form onSubmit={this.handleSubmit.bind(this)}>
+          name: <input type="text" value={this.state.name} onChange={this.handleNameOnchage.bind(this)} /><br />
+          Gender: <select value={this.state.gender} onChange={this.handleGenderOnchage.bind(this)}>
+            <option value="male">男</option>
+            <option value="female">女</option>
+          </select>
+          <br />
+          <textarea value={this.state.story} onChange={this.handleStoryOnchage.bind(this)}></textarea>
+          <input type="submit" value="Submit" />
+        </form>
+      }
+    }
+    window.addEventListener("load", () => {
+      // 1. 建立自订的 React 组件实体，给定属性
+      let myComponent = <MyHead />
+      // 2. 将建立好的 React 组件实体渲染到容器中
+      const root = ReactDOM.createRoot(document.getElementById("root"))
+      root.render(myComponent)
+    })
+
+  </script>
+</body>
+
+</html>

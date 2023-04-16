@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn {
+        background-color: skyblue;
+        padding: 8px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>事件处理练习</h3>
+    <!-- <button
+      onclick="console.log('点击事件');"
+      onmouseover="console.log('移入')"
+      onmouseout="console.log('移出')"
+      onmousedown="console.log('按住')"
+      onmouseup="console.log('放开')">
+      点我
+    </button> -->
+    <span
+      class="btn"
+      onmouseover="over(this)"
+      onmouseout="out(this)"
+      onmousedown="down(this)"
+      onmouseup="up(this)"
+      >点我</span
+    >
+    <span
+    class="btn"
+    onmouseover="over(this)"
+    onmouseout="out(this)"
+    onmousedown="down(this)"
+    onmouseup="up(this)"
+    >第二个按钮</span
+  >
+    <script>
+      function over(element) {
+        element.style.backgroundColor = 'red';
+      }
+      function out(element) {
+        element.style.backgroundColor = 'skyblue';
+      }
+      function down(element) {
+        element.style.fontWeight = 'bold';
+      }
+      function up(element) {
+        element.style.fontWeight = 'normal';
+      }
+    </script>
+  </body>
+</html>

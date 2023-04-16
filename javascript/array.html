@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 建立阵列物件
+    let grades=[]
+    grades.push(100)
+    grades.push(92)
+    grades.push(73)
+    // console.log(grades);
+    // console.log(grades[0]);
+    // console.log(grades[1]);
+    // console.log(grades.length);
+    // 利用 for 循环，逐一取得阵列中的资料
+    let total=0
+    for(let i=0;i<grades.length;i++){
+      total+=grades[i]
+      console.log(grades[i]);
+    }
+    let average = total/grades.length
+    console.log(average);
+  </script>
+</body>
+</html>

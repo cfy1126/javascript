@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .text {
+      color: skyblue
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <h3>HTML DOM 画面操作</h3>
+  <div id="content">练习网页画面操作</div>
+  <button onclick="change()">点我</button>
+  <script>
+    function change () {
+      let element = document.querySelector("#content")
+      console.log(element);
+      element.innerHTML="对特定的标签做操作"
+      element.className="text"
+      element.style.fontSize="30px"
+      element.style.color="red"
+      console.log(element);
+    }
+    console.log(document);
+  </script> -->
+  <div class="head">
+    <span onmouseover="about()">关于我</span>
+    <span onmouseover="learn()">学经历</span>
+  </div>
+  <hr />
+  <div id="about">关于我</div>
+  <div style="display:none" id="learn">学经历</div>
+  <script>
+    function about () {
+      let elementAbout = document.querySelector("#about")
+      let elementLearn = document.querySelector("#learn")
+      elementAbout.style.display = "block"
+      elementLearn.style.display = "none"
+
+      // element.innerHTML="关于我"
+    }
+    function learn () {
+      let elementAbout = document.querySelector("#about")
+      let elementLearn = document.querySelector("#learn")
+      elementAbout.style.display = "none"
+      elementLearn.style.display = "block"
+    }
+  </script>
+</body>
+
+</html>

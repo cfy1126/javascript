@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 认识 window 物件 (HTML DOM 结构入口)
+    console.log(window);
+    // 取得视窗的宽度和高度
+    console.log(window.innerHeight,window.innerWidth);
+    // 透过 screen 物件，取得荧幕的尺寸
+    console.log(window.screen.height,window.screen.width);
+    // 取得网址的内容
+    console.log(window.location.href);
+    // 更改网址列内容（跳转网页）
+    // window.location.href = "https://www.google.com/"
+    // 认识 document 物件
+    console.log(window.document);
+    console.log(document);
+    // 取得网页标题
+    console.log(document.title);
+    // 更新网页标题
+    document.title = "hello Cao"
+    // 取得body标签
+    console.log(document.body);
+    // 取得页面主画面的内容（Body 标签内文）
+    console.log(document.body.innerHTML);
+    //修改body内容
+    // document.body.innerHTML = "Hello cao"
+  </script>
+</body>
+</html>

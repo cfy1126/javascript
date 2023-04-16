@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function getData () {
+      return new Promise(function (resolve, reject) {
+        let req = new XMLHttpRequest()
+        req.open("get", "p")
+        req.onload = function () {
+          resolve(this.responseText)
+        }
+        req.onerror = function () {
+          reject("Error")
+        }
+        req.send()
+      })
+    }
+    let dataPromise = getData()
+    // dataPromise.then(function (result) {
+    //   alert(result)
+    // }, function (error) {
+    //   // alert(error)
+    //   console.log(error);
+    // })
+    dataPromise.then((result) => {
+      console.log(result)
+    })
+      .catch(error => {
+        console.log(error)
+      })
+  </script>
+</body>
+
+</html>

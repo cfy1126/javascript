@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+  let man = new Object()
+  man.age = 18
+  man.name = 'cao'
+  man.talk = function(){
+    console.log("Hello 我是",this.name,"年龄",this.age);
+  }
+  // 使用物件
+  console.log(man);
+  console.log(man.age); // 物件，成员名称
+  man.talk() // 呼叫物件的方法
+  */
+    // 使用 json 建立对象
+    let man = {
+      age: 18,
+      name: 'cao',
+      talk: function () {
+        console.log('Hello 我是', this.name, '年龄', this.age)
+      },
+    }
+    console.log(man)
+    man.talk();
+  </script>
+</body>
+
+</html>

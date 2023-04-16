@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="getData()">获取资料</button>
+    <div id="result"></div>
+    <script>
+      function getData() {
+        fetch('data.json')
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            // 已经取得资料，把资料呈现到画面上
+            let result = document.querySelector('#result');
+            result.innerHTML = '';
+            for (let i = 0; i < data.length; i++) {
+              let product = data[i];
+              result.innerHTML += `<div>${product.name},${product.price},${product.description}</div>`;
+            }
+          });
+      }
+    </script>
+  </body>
+</html>
