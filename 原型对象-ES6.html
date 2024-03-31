@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Tesila {
+            constructor(price){
+                this.price = price;
+            }
+            getPrice(){
+                console.log(this.price);
+            }
+        }
+        class Xiaomi extends Tesila{
+            constructor(price){
+                super(price)
+            }
+        }
+        const tesila = new Tesila(20);
+        const xiaomi = new Xiaomi(20);
+        xiaomi.getPrice();
+        console.log(xiaomi instanceof Tesila);
+    </script>
+</body>
+</html>

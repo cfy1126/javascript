@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 箭头函数
+    1. 参数只有一个可以不写括号
+    2. 只有返回值可以不写return -->
+    <!-- 箭头函数和普通函数区别
+    1. this指向不同
+    2. 普通函数：谁调用，指向谁
+    2. 箭头函数：谁定义，指向谁-->
+    <script>
+        // let obj = {
+        //     name: 'tom',
+        //     sayHello:function(){
+        //         console.log(this.name);
+        //     }
+        // }
+        // console.log(obj.sayHello());
+        let obj = {
+            name: 'tom',
+            sayHello: function () {
+                // let self = this;
+                setTimeout(function(){
+                    console.log(this.name);
+                }, 1000)
+            }
+        }
+        obj.sayHello();
+    </script>
+</body>
+
+</html>

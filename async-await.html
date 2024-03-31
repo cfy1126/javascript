@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function movie(){
+            return new Promise(function(resolved){
+                setTimeout(function(){
+                    resolved('movie')
+                },1000)
+            })
+        }
+        function eat(){
+            return new Promise(function(resolved){
+                setTimeout(function(){
+                    resolved('eat')
+                },3000)
+            })
+        }
+        async function fun(){
+            const value1 = await movie();
+            console.log(value1);
+            const value2 = await eat();
+            console.log(value2);
+        }
+        fun();
+    </script>
+</body>
+</html>

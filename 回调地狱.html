@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fun1(fn) {
+            setTimeout(function () {
+                let a = 'hello';
+                fn(a)
+            }, 1000)
+        }
+        function fun2(fn) {
+            setTimeout(function () {
+                let a = 'world';
+                fn(a)
+            }, 1000)
+        }
+        function fun3(fn) {
+            setTimeout(function () {
+                let a = 'caofayou';
+                fn(a)
+            }, 1000)
+        }
+        // 输入hello world
+        fun1(function (a) {
+            fun2(function (b) {
+                fun3(function (c) {
+                    console.log(c);
+                }); 
+                console.log(b);
+            })
+            console.log(a);
+        })
+    </script>
+</body>
+
+</html>
