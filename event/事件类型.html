@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      position: absolute;
+      top: 200px;
+      left: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 1. 鼠标事件：click、mouseenter、mouseleave、mousemove -->
+  <!-- 2. 键盘事件：keydown-->
+  <!-- 3. 触摸事件： -->
+  <div class="box"></div>
+  <script>
+    let box = document.querySelector('.box');
+    document.onkeydown = function (e) {
+      let keycode = e.keyCode;
+      // 38 40 37 39
+      switch (keycode) {
+        case 37: box.style.left = box.offsetLeft - 5 + 'px'; break;
+        case 38: box.style.top = box.offsetTop - 5 + 'px'; break;
+        case 39: box.style.left = box.offsetLeft + 5 + 'px'; break;
+        case 40: box.style.top = box.offsetTop + 5 + 'px'; break;
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>我是button</button>
+  <script>
+    // 1. addEventListener 不会被覆盖；onEventType 会被覆盖
+    // 2. addEventListener 可以捕获阶段触发，onEventType 不能
+    let btn = document.querySelector('button');
+    // btn.onclick = function(){
+    //   console.log('hello world');
+    // }
+    // btn.onclick = function(){
+    //   console.log('hello javascript');
+    // }
+    btn.addEventListener('click',function(){
+      console.log('hello world');
+    })
+    btn.addEventListener('click',function(){
+      console.log('hello javascript');
+    })
+  </script>
+</body>
+</html>

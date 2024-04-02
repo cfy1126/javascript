@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 160px;
+      height: 160px;
+      background-color: red;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="show">显示</button>
+  <div class="container">
+    <button class="close">关闭</button>
+  </div>
+  <script>
+    // 通过e.target将子元素的事件委托给父级处理
+    let btn = document.querySelector('.show');
+    let container = document.querySelector('.container');
+    let btn2 = document.querySelector('.close')
+    btn.addEventListener('click', function () {
+      container.style.display = 'block';
+    })
+    container.addEventListener('click', function () {
+      container.style.backgroundColor = 'yellow';
+    })
+    btn2.addEventListener('click', function (e) {
+      e.stopPropagation();
+      container.style.display = 'none';
+    })
+  </script>
+</body>
+
+</html>

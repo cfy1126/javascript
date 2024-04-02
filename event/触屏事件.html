@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+
+  </div>
+  <script>
+    let box = document.querySelector('.box');
+    console.log(box);
+    box.ontouchstart = function () {
+      console.log('start');
+    }
+    box.ontouchend = function () {
+      console.log('end');
+    }
+    box.ontouchmove = function () {
+      console.log('move');
+    }
+  </script>
+</body>
+
+</html>

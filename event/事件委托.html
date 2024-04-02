@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text">
+  <button>添加</button>
+  <ul>
+    <li>香蕉</li>
+    <li>苹果</li>
+    <li>鸭梨</li>
+  </ul>
+  <script>
+    let ipt = document.querySelector('input');
+    let btn = document.querySelector('button');
+    let ul = document.querySelector('ul');
+    btn.onclick = function(){
+      let value = ipt.value;
+      let txt = document.createTextNode(value);
+      let li = document.createElement('li');
+      li.appendChild(txt);
+      ul.appendChild(li);
+    }
+    ul.onclick = function(e){
+      ul.removeChild(e.target);
+    }
+  </script>
+</body>
+</html>

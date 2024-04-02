@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .small{
+      width: 20px;
+      height: 20px;
+      background-color: red;
+    }
+    .medium{
+      width: 40px;
+      height: 40px;
+      background-color: green;
+    }
+    .big{
+      width: 80px;
+      height: 80px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="big">
+    <div class="medium">
+      <div class="small"></div>
+    </div>
+  </div>
+  <script>
+    // 事件默认是在冒泡时候触发
+    // addEventListener 第三个参数默认为 false(冒泡)
+    let small = document.querySelector('.small');
+    let medium = document.querySelector('.medium');
+    let big = document.querySelector('.big');
+    small.addEventListener('click',function(){
+      console.log("I'm small");
+    })
+    medium.addEventListener('click',function(){
+      console.log("I'm medium");
+    })
+    big.addEventListener('click',function(){
+      console.log("I'm big");
+    })
+  </script>
+</body>
+</html>
