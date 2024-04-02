@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text">
+  <button>我是button</button>
+  <ul></ul>
+  <script>
+    let btn = document.querySelector('button');
+    let ul = document.querySelector('ul');
+    let ipt = document.querySelector('input');
+    btn.onclick = function(){
+      let value = ipt.value;
+      let li = document.createElement('li');
+      let txt = document.createTextNode(value);
+      li.appendChild(txt);
+      ul.appendChild(li);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">按钮</button>
+    <div class="box"></div>
+    <script>
+      let btn = document.querySelector('.btn');
+      let box = document.querySelector('.box');
+      box.onmouseenter = function () {
+        this.style.backgroundColor = 'blue';
+      };
+      box.onmouseleave = function () {
+        this.style.backgroundColor = 'red';
+      };
+      btn.onclick = function () {
+        box.style.backgroundColor = 'yellow';
+      };
+    </script>
+  </body>
+</html>
+
+<!-- 知识点
+1. 元素绑定事件
+2. 元素设置样式
+-->

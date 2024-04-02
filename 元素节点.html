@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 id="cao">hello,world</h1>
+  <button class="btn">hello</button>
+  <button class="btn">world</button>
+  <button class="btn">hello</button>
+  <button class="btn">world</button>
+  <script>
+    // let h1 = document.getElementById('cao');
+    // console.log(h1);
+    // let btns = document.getElementsByClassName('btn');
+    // console.log(btns);
+    // for (let i in btns) {
+    //   btns[i].innerHTML = 'test';
+    // }
+    let h1 = document.querySelector('#cao');
+    console.log(h1);
+    let btns = document.querySelectorAll('.btn');
+    console.log(btns);
+    for (let i in btns) {
+      btns[i].innerHTML = 'test page';
+    }
+  </script>
+</body>
+
+</html>
+
+
+<!-- 知识点
+1. 选择标签
+-->

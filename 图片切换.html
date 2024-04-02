@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      img {
+        height: 320px;
+        width: 640px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img
+        src="images/image01.jpg"
+        alt=""
+      />
+    </div>
+    <div class="btns">
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+    </div>
+    <script>
+      // let btns = document.querySelector('.btns');
+      // let img = document.querySelector('img');
+      // btns.onclick = function (e) {
+      //   let btn = e.target;
+      //   let index = btn.innerHTML;
+      //   img.src = `images/image0${index}.jpg`;
+      // };
+      let btns = document.querySelectorAll('.btn');
+      let img = document.querySelector('img');
+      let imagesSrcList = [
+        'images/image01.jpg',
+        'images/image02.jpg',
+        'images/image03.jpg',
+      ];
+      for (let key in btns) {
+        btns[key].onclick = function () {
+          img.src = imagesSrcList[key];
+        };
+      }
+    </script>
+  </body>
+</html>
+
+<!-- 知识点
+1. 实现一个点击数字列表，切换图片的效果
+-->

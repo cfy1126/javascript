@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .swiper {
+      width: 640px;
+      height: 320px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .images-container {
+      width: 1920px;
+      height: 320px;
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+
+    .images-container img {
+      width: 640px;
+      height: 320px;
+    }
+
+    .btns-container {
+      position: absolute;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="swiper">
+    <div class="images-container">
+      <img src="images/image01.jpg" alt="" />
+      <img src="images/image02.jpg" alt="" />
+      <img src="images/image03.jpg" alt="" />
+    </div>
+    <div class="btns-container">
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+    </div>
+  </div>
+  <script>
+    let btns = document.querySelectorAll('button');
+    let container = document.querySelector('.images-container');
+    for (let i in btns) {
+      btns[i].onclick = function () {
+        // 0 * 640  = 0;
+        // 1 * 640 = 640;
+        // 2 * 640 = 1280;
+        container.style.transform = `translate(${-640 * i}px)`;
+      }
+    }
+  </script>
+</body>
+
+</html>
+
+<!-- 知识点
+1. 实现轮播图（CSS3效果）
+-->
