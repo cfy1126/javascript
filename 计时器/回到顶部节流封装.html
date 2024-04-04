@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+
+        button {
+            position: fixed;
+            right: 100px;
+            bottom: 100px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>hello world</h1>
+    <button>⬆️</button>
+    <script>
+        let btn = document.querySelector('button');
+        btn.onclick = function () {
+            window.scrollTo(0, 0)
+        }
+        let timer = null;
+        window.onscroll = throttle(function () {
+            let distance = document.documentElement.scrollTop;
+            if (distance > 0) {
+                btn.style.display = 'block';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, 1000)
+        function throttle(fn, delay) {
+            let mark = true;
+            return function () {
+                if (mark) {
+                    setTimeout(() => {
+                        console.log('hello');
+                        fn.call(this);
+                        mark = true;
+                    }, delay)
+                }
+                mark = false;
+            }
+        }
+    </script>
+</body>
+
+</html>

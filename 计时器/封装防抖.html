@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        window.onscroll = debounce(function(){
+            console.log('hello');
+            console.log(this);
+        },1000)
+        function debounce(fn, delay) {
+            let timer = null;
+            return function () {
+                if (timer !== null) {
+                    clearTimeout(timer)
+                }
+                timer = setTimeout(() => {
+                    fn.call(this);
+                    timer = null;
+                }, 1000)
+            }
+        }
+    </script>
+</body>
+
+</html>
