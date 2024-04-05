@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="fruits-list">
+        <li>香蕉</li>
+        <li>苹果</li>
+        <li>鸭梨</li>
+    </ul>
+    <script>
+        let fruitsList = document.querySelector('.fruits-list');
+        fruitsList.onclick = function(e){
+            let result = confirm('确认删除数据吗，请谨慎操作！！！');
+            if(result){
+                fruitsList.removeChild(e.target);
+                alert('删除成功！')
+            }else{
+                alert('取消删除');
+            }
+        }
+    </script>
+</body>
+</html>

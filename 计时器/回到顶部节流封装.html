@@ -27,7 +27,6 @@
         btn.onclick = function () {
             window.scrollTo(0, 0)
         }
-        let timer = null;
         window.onscroll = throttle(function () {
             let distance = document.documentElement.scrollTop;
             if (distance > 0) {
@@ -41,7 +40,6 @@
             return function () {
                 if (mark) {
                     setTimeout(() => {
-                        console.log('hello');
                         fn.call(this);
                         mark = true;
                     }, delay)
