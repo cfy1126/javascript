@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1. 函数里面嵌套函数形成闭包
+        2. 内部嵌套函数fun2为闭包函数
+        3. 特性：内部函数未执行完，外部函数即使执行完成，外部函数的变量也不会被销毁
+    -->
+    <script>
+        function fun1(){
+            let n = 20;
+            let m = 30;
+            function fun2(){
+                return n+m;
+            }
+            return fun2;
+        }        
+        let f = fun1();
+        let result = f();
+        console.log(result);
+    </script>
+</body>
+</html>
