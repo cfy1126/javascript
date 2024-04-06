@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'linkincao1988@gmail.com';
+        let reg = /^\w{6,20}@gmail\.com$/;
+        if(reg.test(str)){
+            console.log('通过验证');
+        }else{
+            console.log('验证失败');
+        }
+    </script>
+</body>
+</html>

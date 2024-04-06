@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let div = document.createElement('div');
+        let body = document.querySelector('body');
+        body.appendChild(div);
+        setInterval(() => {
+            let nowTime = new Date();
+            let year = nowTime.getFullYear();
+            let month = nowTime.getMonth() + 1;
+            let date = nowTime.getDate();
+            let day = nowTime.getDay();
+            let hour = nowTime.getHours();
+            let minute = nowTime.getMinutes();
+            let second = nowTime.getSeconds();
+            div.innerHTML = `
+            今天是${year}-${month}-${date},北京时间${hour}:${minute}:${second}`
+        }, 1000)
+    </script>
+</body>
+
+</html>

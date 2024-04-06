@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nowTime = new Date();
+        let year = nowTime.getFullYear();
+        let month = nowTime.getMonth()+1;
+        let date = nowTime.getDate();
+        let day = nowTime.getDay();
+        let hours = nowTime.getHours();
+        let minutes = nowTime.getMinutes();
+        let seconds = nowTime.getSeconds();
+        let timestamp = nowTime.getTime(); // 1970年01月01日00时00分00秒起至现在的总毫秒数
+        console.log(timestamp); 
+    </script>
+</body>
+</html>
