@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nowTime = new Date('1999-01-13');
+        Date.prototype.dateFormate = function(){
+            let year = this.getFullYear();
+            let month = this.getMonth()+1;
+            let date = this.getDate();
+            return `${year}年${month}月${date}日`
+        }
+        console.log(nowTime.dateFormate());
+    </script>
+</body>
+</html>
