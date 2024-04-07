@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1. 赋值不同: 原始类型赋值，引用类型赋的是引用
+        2. 比较不同: 原始类型比较的是值，引用类型比较的是引用是否指向同一个对象
+        3. 传参不同：
+     -->
+     <script>
+        // function fun(x){
+        //     x = 100;
+        //     console.log(`x的值是${x}`);
+        // }
+        // let number = 10;
+        // fun(number);
+        // console.log(`number的值是${number}`);
+        
+        function fun(o){
+            o.name = 'xiaohong';
+            console.log(`对象的名字叫${o.name}`);
+        }
+        let obj = {name: 'zhangsan'};
+        fun(obj);
+        console.log(`对象名字叫什么${obj.name}`);
+     </script>
+</body>
+</html>
