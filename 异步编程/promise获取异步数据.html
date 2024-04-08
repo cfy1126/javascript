@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // return 只能返回同步的数据
+    let target = 'hello world';
+    function getData() {
+      return new Promise((resolved, reject) => {
+        setTimeout(() => {
+          resolved(target);
+        }, 1000)
+      })
+    }
+    getData().then(data=>{
+      console.log(data);
+    })
+  </script>

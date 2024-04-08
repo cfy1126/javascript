@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let target = 'hello world';
+    function getData(){
+      return new Promise((resolved,reject)=>{
+        setTimeout(()=>{
+          resolved(target);
+        },1000)
+      })
+    }
+    async function fun(){
+      let data = await getData();
+      console.log(data);
+    }
+    fun();
+  </script>
+</body>
+</html>
