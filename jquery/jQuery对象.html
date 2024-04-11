@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="button" value="按钮1">
+  <input type="button" value="按钮2">
+  <script src="script/jquery.js"></script>
+<!--
+  1. $('input') 和 jQuery('input') 效果一样
+  2. $() 包装，将dom对象包装成jQuery对象，之后就可以使用jQuery方法
+  3. 可以通过$可以将dom对象转换成jQuery对象
+-->
+  <script>
+    jQuery('input').click(function(){
+      console.log('hello world');
+      console.log($('input'));
+      console.log(this);
+      console.log(this.value);
+      console.log($(this));
+      console.log($(this).val());
+    })
+    // let btns = document.querySelectorAll('input');
+    // for(let i in btns){
+    //   btns[i].onclick = function(){
+    //     console.log(this);
+    //     console.log(this.value);
+    //   }
+    // }
+  </script>
+</body>
+</html>
