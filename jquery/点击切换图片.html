@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 320px;
+            height: 160px;
+        }
+    </style>
+</head>
+<body>
+    <script src="script/jquery.js"></script>
+    <img src="../images/image01.jpg" alt="">
+    <div class="btns">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+    </div>
+    <script>
+        let imgArr = ['../images/image01.jpg','../images/image02.jpg','../images/image03.jpg'];
+        $('.btns button').click(function(){
+            let index = $(this).index();
+            $('img').attr('src',imgArr[index]);
+        })
+    </script>
+</body>
+</html>

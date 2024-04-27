@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="script/jquery.js"></script>
+    <input type="text">
+    <button>添加</button>
+    <ul>
+        <li>香蕉</li>
+        <li>苹果</li>
+        <li>鸭梨</li>
+    </ul>
+    <script>
+        $('button').click(function(){
+            let value = $('input').val();
+            const li = $(`<li>${value}</li>`);
+            $('ul').append(li);
+        })
+        $('ul').on('click','li',function(){
+            $(this).remove();
+        })
+    </script>
+</body>
+</html>

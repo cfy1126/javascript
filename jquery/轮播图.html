@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .swiper {
+            position: relative;
+            width: 640px;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .swiper .inner {
+            display: flex;
+            width: 1920px;
+            position: relative;
+        }
+
+        .swiper .inner img {
+            width: 640px;
+            height: 320px;
+        }
+
+        .swiper .btns {
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper">
+        <div class="inner">
+            <img src="../images/image01.jpg" alt="">
+            <img src="../images/image02.jpg" alt="">
+            <img src="../images/image03.jpg" alt="">
+        </div>
+        <div class="btns">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+        </div>
+    </div>
+    <script src="script/jquery.js"></script>
+    <script>
+        // let btns = document.querySelectorAll('.btns button');
+        // let inner = document.querySelector('.inner');
+        // for(let i in btns){
+        //     btns[i].onclick = function(){
+        //         inner.style.left = -640*i + 'px';
+        //     }
+        // }
+        $('.btns button').click(function(){
+            let index = $(this).index();
+            $('.inner').css({
+                left: -640*index + 'px'
+            })
+        })
+    </script>
+</body>
+
+</html>

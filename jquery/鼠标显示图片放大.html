@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pic-list img{
+            width: 320;
+            height: 160px;
+        }
+        .pic-move{
+            position: absolute;
+        }
+        .pic-move img{
+            width: 640px;
+            height: 320px;
+        }
+    </style>
+</head>
+<body>
+    <div class="pic-list">
+        <img src="../images/image01.jpg" alt="">
+        <img src="../images/image02.jpg" alt="">
+        <img src="../images/image03.jpg" alt="">
+    </div>
+    <div class="pic-move">
+        <!-- <img src="../images/image01.jpg" alt=""> -->
+    </div>
+    <script src="script/jquery.js"></script>
+    <script>
+        // let imgList = document.querySelector('.pic-list')
+        // let picList = document.querySelectorAll('.pic-list img');
+        // let move = document.querySelector('.pic-move');
+        // for(let i in picList){
+        //     picList[i].onmouseenter = function(){
+        //         move.innerHTML = `<img src='${this.src}' />`
+        //     }
+        //     picList[i].onmouseleave = function(){
+        //         move.innerHTML = '';
+        //     }
+        // }
+        // imgList.onmousemove = function(e){
+        //     let x = e.clientX;
+        //     let y = e.clientY;
+        //     move.style.left  = x + 10 + 'px';
+        //     move.style.top = y + 10 + 'px';
+        // }
+        $('.pic-list img').mouseenter(function(){
+            let img = $(`<img src='${jQuery(this).attr('src')}' />`);
+            $('.pic-move').html(img);
+        }).mouseleave(function(){
+            $('.pic-move').html('');
+        })
+        $('.pic-list').mousemove(function(e){
+            let x = e.pageX;
+            let y = e.pageY;
+            $('.pic-move').css({
+                top : y + 10 + 'px',
+                left: x + 10 + 'px'
+            })
+        })
+    </script>
+</body>
+</html>
