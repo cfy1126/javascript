@@ -28,22 +28,11 @@
   <button>按钮1</button>
   <button>按钮2</button>
   <button>按钮3</button>
+  <input type="button" value="按钮4">
   <script>
-    $('button').click(function(){
-      // let index = $(this).index();
-      // console.log(index);
-
-      // let text = $(this).text();
-      // console.log(text);
-      // $(this).text('新按钮');
-
-      let height = $(this).css('height');
-      console.log(height);
-      // $(this).css('height','200px');
-      $(this).css({
-        height: '200px',
-        color: 'blue'
-      })
+    $('input').click(function(){
+        let value = $(this).val();
+        console.log(value);
     })
   </script>
 </body>

@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="script/jquery.js"></script>
   <style>
-    button{
-      height: 50px;
+    .box{
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
     }
   </style>
-  <script src="script/jquery.js"></script>
 </head>
 <body>
   <!--
@@ -25,25 +27,14 @@
     10. find('选机器'); 获取子集
     11. parent(); 获取父级
   -->
-  <button>按钮1</button>
-  <button>按钮2</button>
-  <button>按钮3</button>
+<ul class="fruits-list">
+    <li>香蕉</li>
+    <li>苹果</li>
+    <li>鸭梨</li>
+</ul>
   <script>
-    $('button').click(function(){
-      // let index = $(this).index();
-      // console.log(index);
-
-      // let text = $(this).text();
-      // console.log(text);
-      // $(this).text('新按钮');
-
-      let height = $(this).css('height');
-      console.log(height);
-      // $(this).css('height','200px');
-      $(this).css({
-        height: '200px',
-        color: 'blue'
-      })
+    $('.fruits-list li').click(function(){
+        $(this).remove();
     })
   </script>
 </body>
